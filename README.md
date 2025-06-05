@@ -1,1 +1,1 @@
-# steve-app-poc
+# Steve Adore App - MVC
