@@ -2,17 +2,17 @@
 
 ## Project Overview
 - **React + Vite**: The app is a React SPA bootstrapped with Vite for fast development and hot module reloading.
-- **Routing**: Uses React Router v7. Route components are in `app/src/pages`. Shared UI and logic are in `app/src/components`.
+- **Routing**: Uses React Router v7. Route components are in `src/pages`. Shared UI and logic are in `src/components`.
 - **Styling**: Tailwind CSS is configured via `tailwind.config.js` and `postcss.config.js`. Styles are imported in `App.css` and `index.css`.
-- **Authentication**: Supabase is used for authentication. The client is initialized in `app/src/supabaseClient.js`. Auth context and protected routes are managed in `AuthContext.jsx` and `ProtectedRoute.jsx`.
+- **Authentication**: Supabase is used for authentication. The client is initialized in `src/supabaseClient.js`. Auth context and protected routes are managed in `AuthContext.jsx` and `ProtectedRoute.jsx`.
 
 ## Key Files & Structure
-- `app/src/pages/`: Route-level components (e.g., `LoginPage.jsx`, `UserHome.jsx`, `AdminHome.jsx`).
-- `app/src/components/`: Shared components (e.g., `Layout.jsx`, `ProtectedRoute.jsx`).
-- `app/src/AuthContext.jsx`: Provides authentication state/context.
-- `app/src/supabaseClient.js`: Supabase client setup using environment variables.
-- `app/index.html`: Main HTML entry point.
-- `app/vite.config.js`: Vite configuration.
+- `src/pages/`: Route-level components (e.g., `LoginPage.jsx`, `UserHome.jsx`, `AdminHome.jsx`).
+- `src/components/`: Shared components (e.g., `Layout.jsx`, `ProtectedRoute.jsx`).
+- `src/AuthContext.jsx`: Provides authentication state/context.
+- `src/supabaseClient.js`: Supabase client setup using environment variables.
+- `index.html`: Main HTML entry point.
+- `vite.config.js`: Vite configuration.
 
 ## Developer Workflows
 - **Install & Run**: From the `app` directory, use:
@@ -20,13 +20,13 @@
   npm install
   npm run dev
   ```
-- **Environment Variables**: Set Supabase credentials in `app/.env`:
+- **Environment Variables**: Set Supabase credentials in `.env`:
   ```
   VITE_SUPABASE_URL=your-url
   VITE_SUPABASE_ANON_KEY=your-anon-key
   ```
 - **Debugging Auth**: Check `AuthContext.jsx` and `ProtectedRoute.jsx` for login flow and route protection logic.
-- **Adding Pages**: Place new route components in `app/src/pages` and update routing in `App.jsx`.
+- **Adding Pages**: Place new route components in `src/pages` and update routing in `App.jsx`.
 - **Styling**: Use Tailwind utility classes. Update config in `tailwind.config.js` as needed.
 
 ## Patterns & Conventions
@@ -41,7 +41,7 @@
 - **Tailwind CSS**: For utility-first styling.
 
 ## Example: Adding a Protected Page
-1. Create a new component in `app/src/pages` (e.g., `Dashboard.jsx`).
+1. Create a new component in `src/pages` (e.g., `Dashboard.jsx`).
 2. Add a route in `App.jsx` wrapped with `ProtectedRoute`.
 3. Use Supabase client for any backend calls.
 

@@ -1,3 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary-blue: #183A52;
+  --color-primary-yellow: #FFD147;
+  --color-secondary-white: #FFFFFF;
+  --color-accent-red: #E54D42;
+  --color-accent-orange: #F5A623;
+  --color-accent-light-blue: #50A6C2;
+  --color-accent-green: #7ED321;
+  
+  --font-family-bebas: "Bebas Neue", sans-serif;
+  --font-family-opensans: "Open Sans", sans-serif;
+}

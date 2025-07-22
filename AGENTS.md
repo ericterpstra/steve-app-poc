@@ -9,7 +9,7 @@ This repository holds a React + Vite single page application located under the `
    npm install
    npm run dev
    ```
-2. Create `app/.env` with Supabase credentials:
+2. Create `.env` with Supabase credentials:
    ```
    VITE_SUPABASE_URL=your-url
    VITE_SUPABASE_ANON_KEY=your-anon-key
@@ -17,15 +17,15 @@ This repository holds a React + Vite single page application located under the `
 3. Lint code with `npm run lint` before committing.
 
 ## Project Layout
-- `app/src/pages/` – route components such as `LoginPage.jsx`, `UserHome.jsx`, `AdminHome.jsx`.
-- `app/src/components/` – shared UI components like `Layout.jsx` and `ProtectedRoute.jsx`.
-- `app/src/AuthContext.jsx` – React context for authentication state.
-- `app/src/supabaseClient.js` – initializes Supabase client from `.env` variables.
-- `app/index.html` – HTML entry point used by Vite.
-- `app/tailwind.config.js` & `app/postcss.config.js` – Tailwind setup.
+- `src/pages/` – route components such as `LoginPage.jsx`, `UserHome.jsx`, `AdminHome.jsx`.
+- `src/components/` – shared UI components like `Layout.jsx` and `ProtectedRoute.jsx`.
+- `src/AuthContext.jsx` – React context for authentication state.
+- `src/supabaseClient.js` – initializes Supabase client from `.env` variables.
+- `index.html` – HTML entry point used by Vite.
+- `tailwind.config.js` & `postcss.config.js` – Tailwind setup.
 
 ## Architecture Notes
-- Routing is configured in `app/src/App.jsx` with `createBrowserRouter`.
+- Routing is configured in `src/App.jsx` with `createBrowserRouter`.
 - Authentication state persists via `AuthContext` and is checked in `ProtectedRoute`.
 - Use functional components and React hooks throughout the app.
 - All backend calls should import the Supabase client from `supabaseClient.js`.
