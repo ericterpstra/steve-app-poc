@@ -48,4 +48,9 @@ This repository holds a React + Vite single page application located under the `
 - When adding new routes, update the router configuration in `App.jsx` and ensure navigation links exist in `Layout.jsx`.
 - For styling consistency, import global styles via `index.css` and component-specific classes via Tailwind utilities.
 
+## Reference Documents
+- **Standard Operating Procedures**: See `docs/SOPS.md` for environment setup, development workflow, commit & release guidelines, and business processes.
+- **Style Guide**: See `docs/STYLEGUIDE.md` for detailed brand styling guidelines including color palette, typography, layout & spacing, core components, iconography, backgrounds & imagery, motion & interaction, and accessibility checklist.
+- **Business Model**: See `docs/BUSINESS.md` for an overview of the product’s core offering, target customers, data acquisition strategy, go-to-market plan, revenue streams, and founders’ mission.
+
 These guidelines should help any autonomous coding agent navigate the project, add new features, and maintain consistency with the existing codebase.
