@@ -23,8 +23,10 @@ export default function LoginPage() {
         // After signup, user might need to confirm email
         setError('Check your email to confirm your account!')
       } else {
-        await signIn(email, password)
-        navigate('/user')
+        const { data } = await signIn(email, password)
+        // Get role from JWT metadata and navigate accordingly
+        const role = data?.session?.user?.app_metadata?.role || 'user'
+        navigate(role === 'admin' ? '/admin' : '/dashboard', { replace: true })
       }
     } catch (err) {
       setError(err.message)
@@ -127,7 +129,7 @@ export default function LoginPage() {
         </form>
 
         <div className="text-center">
-          <Link to="/" className="text-sm text-gray-600 hover:text-primary-blue">
+          <Link to="/home" className="text-sm text-gray-600 hover:text-primary-blue">
             Back to home
           </Link>
         </div>

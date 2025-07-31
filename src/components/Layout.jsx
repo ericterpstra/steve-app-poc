@@ -2,7 +2,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom'
 import { useAuth } from '../AuthContext'
 
 export default function Layout() {
-  const { user } = useAuth()
+  const { user, role } = useAuth()
   const location = useLocation()
 
   const isActive = (path) => location.pathname === path
@@ -15,7 +15,7 @@ export default function Layout() {
           <div className="flex items-center justify-between">
             <div>
               <Link 
-                to="/" 
+                to="/home" 
                 className="text-primary-yellow text-3xl font-bebas hover:text-yellow-300"
               >
                 STEVE
@@ -42,9 +42,9 @@ export default function Layout() {
           {/* Desktop and mobile menu */}
           <div className="hidden md:flex items-center space-x-4" id="mobile-menu">
             <Link 
-              to="/" 
+              to="/home" 
               className={`my-1 text-sm font-semibold md:mx-4 md:my-0 ${
-                isActive('/') ? 'text-primary-yellow' : 'text-secondary-white hover:text-primary-yellow'
+                isActive('/home') ? 'text-primary-yellow' : 'text-secondary-white hover:text-primary-yellow'
               }`}
             >
               Home
@@ -67,18 +67,18 @@ export default function Layout() {
             </Link>
             {user ? (
               <Link 
-                to="/user" 
+                to={role === 'admin' ? '/admin' : '/dashboard'} 
                 className={`my-1 text-sm font-semibold md:mx-4 md:my-0 ${
-                  isActive('/user') || isActive('/admin') ? 'text-primary-yellow' : 'text-secondary-white hover:text-primary-yellow'
+                  isActive('/dashboard') || isActive('/admin') ? 'text-primary-yellow' : 'text-secondary-white hover:text-primary-yellow'
                 }`}
               >
                 Dashboard
               </Link>
             ) : (
               <Link 
-                to="/login" 
+                to="/" 
                 className={`my-1 text-sm font-semibold md:mx-4 md:my-0 ${
-                  isActive('/login') ? 'text-primary-yellow' : 'text-secondary-white hover:text-primary-yellow'
+                  isActive('/') ? 'text-primary-yellow' : 'text-secondary-white hover:text-primary-yellow'
                 }`}
               >
                 Login

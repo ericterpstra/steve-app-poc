@@ -13,13 +13,13 @@ const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      { path: '/', element: <LandingPage /> },
+      { path: '/', element: <LoginPage /> },
+      { path: '/home', element: <LandingPage /> },
       { path: '/pricing', element: <PricingPage /> },
       { path: '/about', element: <AboutPage /> },
-      { path: '/login', element: <LoginPage /> },
       {
-        element: <ProtectedRoute />,
-        children: [{ path: '/user', element: <UserHome /> }],
+        element: <ProtectedRoute requiredRole="user" />,
+        children: [{ path: '/dashboard', element: <UserHome /> }],
       },
       {
         element: <ProtectedRoute requiredRole="admin" />,
